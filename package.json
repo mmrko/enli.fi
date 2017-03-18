@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "jekyll build --source site --destination docs",
+    "clean": "jekyll clean --destination docs",
+    "build": "npm run clean && jekyll build --source site --destination docs",
     "start": "jekyll serve"
   },
   "repository": {
