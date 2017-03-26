@@ -6,16 +6,16 @@
   "scripts": {
     "clean": "jekyll clean --destination docs",
     "build": "npm run clean && jekyll build --source site --destination docs",
-    "start": "jekyll serve"
+    "start": "jekyll serve --source site --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmrko/enli.fi.git"
+    "url": "git+https://github.com/enlioy/enli.fi.git"
   },
   "author": "Marko Raatikka",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/mmrko/enli.fi/issues"
+    "url": "https://github.com/enlioy/enli.fi/issues"
   },
-  "homepage": "https://github.com/mmrko/enli.fi#readme"
+  "homepage": "https://github.com/enlioy/enli.fi#readme"
 }
