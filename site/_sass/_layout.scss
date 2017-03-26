@@ -24,6 +24,18 @@ section {
   }
 }
 
+.section-padding-all {
+  padding: 4em;
+
+  &--lg {
+    padding: 6em;
+  }
+
+  &--sm {
+    padding: 2em;
+  }
+}
+
 /**
  * Class Container (BEM)
  */

@@ -1,25 +1,4 @@
 /**
- * Base Variables
- */
-$font-header: 'Space Mono', monospace;
-$font-body: 'Inconsolata', monospace;
-$font-post: 'Lora', serif;
-
-$color-alpha: #458DB3;
-$color-alpha--light: #f5f3ef;
-
-$color-black: #0a0a0a;
-$color-grey: #f8f9f9;
-$color-white: #fff;
-
-$mq-xs: 20em;
-$mq-sm: 30em;
-$mq-md: 54em;
-$mq-lg: 64em;
-$mq-xl: 76.5em;
-$mq-xxl: 114em;
-
-/**
  * Base Settings/Overwrite Normalize
  */
 *, *:before, *:after {
@@ -48,13 +27,6 @@ body {
     font-size: 110%;
   }
 
-  @media (min-width: $mq-xl) {
-    font-size: 115%;
-  }
-
-  @media (min-width: $mq-xxl) {
-    font-size: 125%;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -157,4 +129,39 @@ ol, ul {
   color: $color-white;
   background-color: $color-alpha;
   text-shadow: none;
+}
+
+.previews__container.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // @media (min-width: $mq-sm) {
+    background-image: url('../images/hero_landscape.jpg');
+  // }
+
+  @media (min-width: $mq-md) {
+    background-position: -3em;
+    background-image: url('../images/hero_portrait.jpg');
+  }
+
+}
+
+.site-contact {
+  position: absolute;
+  bottom: 0em;
+  left: 3em;
+
+  .info {
+    font-size: $font-small;
+    line-height: 1.5em;
+    margin-left: -1.5em;
+  }
+
+}
+
+.site-title {
+  font-family: "Inconsolata",monospace;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 0px black;
+  cursor: default;
 }

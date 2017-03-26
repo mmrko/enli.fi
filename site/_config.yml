@@ -1,12 +1,13 @@
 # Site settings
-email: marko.raatikka@gmail.com
+email: tommi.sahi@enli.fi
+phone: 0407718567
 baseurl: "/enli.fi"
 paginate: 5
 paginate_path: "/blog/page-:num"
 google_analytics:
 
 # SEO settings
-title: Enli Oy
+title: ENLI Oy
 description: > # this means to ignore newlines until "url:"
   ENLI OY on erikoistunut hoiva- ja palvelukiinteistöjen kehittämiseen ja rakennuttamiseen.
   Meillä on vuosien kokemus erilaisten hoiva- ja päiväkotien sekä seniori- ja
@@ -20,7 +21,7 @@ name:
 profile_img:
 profile:
 social:
-  github: https://github.com/enlioy
+  linkedin: https://fi.linkedin.com/in/tommisahi
 
 # Build settings
 exclude: [ "_screenshots", "Gemfile", "Gemfile.lock", "LICENSE.txt", "README.md" ]
