@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: /enli.fi/sitemap.xml
