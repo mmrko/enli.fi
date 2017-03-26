@@ -7,7 +7,7 @@
     "clean": "jekyll clean --destination docs",
     "build": "npm run clean && jekyll build --source site --destination docs",
     "start": "jekyll serve --source site --watch",
-    "deploy": "npm run build && git add . && git commit -m 'Deploy' && git push"
+    "deploy": "npm run build && git add -u . && git commit -m 'Deploy' && git push"
   },
   "repository": {
     "type": "git",
