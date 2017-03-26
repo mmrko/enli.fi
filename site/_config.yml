@@ -1,7 +1,7 @@
 # Site settings
 email: tommi.sahi@enli.fi
 phone: 0407718567
-baseurl: "/enli.fi"
+baseurl: /enli.fi
 paginate: 5
 paginate_path: "/blog/page-:num"
 google_analytics:
@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "url:"
   ENLI OY on erikoistunut hoiva- ja palvelukiinteistöjen kehittämiseen ja rakennuttamiseen.
   Meillä on vuosien kokemus erilaisten hoiva- ja päiväkotien sekä seniori- ja
   palveluasuntokokonaisuuksien kehittämisestä, rahoittamisesta ja rakennuttamisesta.
-url: http://enli.fi""
+url: http://enli.fi
 # twitter_username: mraatikka
 default_img:
 
