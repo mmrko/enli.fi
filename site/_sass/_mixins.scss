@@ -1,7 +1,7 @@
 /**
  * Underline Slide from left and back
  */
-@mixin border-slide($mainColor: $color-black, $borderColor: $color-alpha, $height: 3px) {
+@mixin border-slide($mainColor: $color-black, $borderColor: $color-light-blue, $height: 3px) {
   position: relative;
 
   color: $mainColor;
@@ -21,6 +21,29 @@
     width: 100%;
   }
 }
+
+@mixin border-slide-anchor($mainColor: $color-black, $borderColor: $color-light-blue, $height: 3px) {
+  a {
+    position: relative;
+    color: $mainColor;
+  }
+
+  a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0%;
+    border-bottom: $height solid $borderColor;
+    transition: width 0.4s ease-in-out;
+  }
+
+  &:hover {
+    a:after { width: 100%; }
+  }
+}
+
 
 /**
  * Button Slide
@@ -53,7 +76,7 @@
     padding: $pad;
     flex-basis: 100% / $sm;
     max-width: 100% / $sm;
-    
+
     @media (min-width: $mq-md) {
       flex-basis: 100% / $md;
       max-width: 100% / $md;

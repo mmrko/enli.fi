@@ -1,0 +1,56 @@
+<!-- <ul itemscope itemtype="http://schema.org/Blog">
+  {% for post in paginator.posts %}
+    <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      <a class="preview__link" href="{{ post.url | prepend: site.baseurl }}" itemprop="url">
+        <span class="preview__date" itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2 class="preview__header" itemprop="name">{{ post.title }}</h2>
+        <p class="preview__excerpt" itemprop="description">{{ post.content | strip_html | truncatewords: 30 }}</p>
+        <span class="preview__more">Lue lisää</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Edellinen</a>
+    {% endif %}
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Seuraava</a>
+    {% endif %}
+  </div>
+{% endif %}
+ -->
+
+<div class="box hoivakodit">
+  <div class="box-overlay">
+    <ul class="service-list">
+      <li class="service-list--item"><i class="badge">1</i><p class="service-list--item-text">Vastaamme ikääntyvän väestön asuntotarpeeseen rakennuttamalla ikäihmisille esteettömiä palvelutaloja ja kodinomaisia ryhmäkoteja. Rakennutamme muille erityisryhmille tarkoitettuja esteettömiä hoivakoteja kustannustehokkaasti</p></li>
+      <li class="service-list--item"><i class="badge">2</i><p class="service-list--item-text">Etsimme palveluntuottajille uusia liiketoimintapaikkoja</p></li>
+      <li class="service-list--item"><i class="badge">3</i><p class="service-list--item-text">Erikoisosaamista on kiinteistön tehokkuuden optimointi käyttötarkoituksen mukaan</p></li>
+    </ul>
+  </div>
+  <h3 class="box-title"><a href="#palvelut-hoivakiinteistot">Hoivakiinteistöt</a></h3>
+</div>
+<div class="box kiinteistokehitys">
+  <div class="box-overlay">
+    <ul class="service-list">
+      <li class="service-list--item"><p class="service-list--item-text"></p></li>
+      <li class="service-list--item"><p class="service-list--item-text"></p></li>
+      <li class="service-list--item"><p class="service-list--item-text"></p></li>
+    </ul>
+  </div>
+  <h3 class="box-title"><a href="#palvelut-kiinteistokehitys">Kiinteistökehitys</a></h3>
+</div>
+<div class="box asunnot">
+  <div class="box-overlay">
+    <ul class="service-list">
+      <li class="service-list--item"><p class="service-list--item-text"></p></li>
+      <li class="service-list--item"><p class="service-list--item-text"></p></li>
+      <li class="service-list--item"><p class="service-list--item-text"></p></li>
+    </ul>
+  </div>
+  <h3 class="box-title"><a href="#asunnot">Asunnot</a></h3>
+</div>

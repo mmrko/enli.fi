@@ -9,41 +9,56 @@ var Tabs = (function() {
 
     init: function() {
       s = this.settings;
+      this.currentTab = this.prevTab = 0
       this.display();
       this.click();
     },
 
-    display: function() {
-      if (s.tab.length) {
-        [].forEach.call(s.tab, function(tab, idx) {
-          if (idx > 0) tab.style.display = 'none';          
-        });
-        s.tab[0].classList.add('active');
-        s.tabs[0].classList.add('active');
-      }
+    display: function(displayIdx) {
+      if (!s.tab.length) return
+
+      displayIdx = displayIdx || 0
+
+      if (s.tab.length <= displayIdx) return
+
+      [].forEach.call(s.tab, function(tab, idx) {
+        if (idx === displayIdx) return
+        tab.style.display = 'none';
+        tab.classList.remove('active')
+      });
+
+      [].forEach.call(s.tabs, function(tabs, idx) {
+        if (idx === displayIdx) return
+        tabs.classList.remove('active')
+      });
+
+      this.prevTab = this.currentTab
+      this.currentTab = displayIdx
+
+      s.tab[displayIdx].style.display = 'block';
+      s.tab[displayIdx].classList.add('active');
+      s.tabs[displayIdx].classList.add('active');
     },
 
     click: function() {
-      if (s.tabs.length) {
-        var currentIdx = 0,
-            prevIdx = currentIdx;
+      if (!s.tabs.length) return
 
-        [].forEach.call(s.tabs, function(tab, idx) {
-          tab.addEventListener('click', function() {
-            prevIdx = currentIdx;
-            currentIdx = idx;
+      var tabs = this;
 
-            if (prevIdx !== currentIdx) {
-              s.tab[prevIdx].style.display = 'none';
-              s.tab[prevIdx].classList.remove('active');
-              s.tabs[prevIdx].classList.remove('active');
-              s.tab[currentIdx].style.display = 'block';
-              s.tab[currentIdx].classList.add('active');
-              s.tabs[currentIdx].classList.add('active');
-            }
-          });
+      [].forEach.call(s.tabs, function(tab, idx) {
+        tab.addEventListener('click', function() {
+          tabs.prevTab = tabs.currentTab
+          tabs.currentTab = idx
+          if (tabs.prevTab === tabs.currentTab) return
+
+          s.tab[tabs.prevTab].style.display = 'none';
+          s.tab[tabs.prevTab].classList.remove('active');
+          s.tabs[tabs.prevTab].classList.remove('active');
+          s.tab[tabs.currentTab].style.display = 'block';
+          s.tab[tabs.currentTab].classList.add('active');
+          s.tabs[tabs.currentTab].classList.add('active');
         });
-      }
+      });
     }
 
   }
@@ -93,14 +108,153 @@ var Preview = (function() {
   }
 })();
 
-var wow = new WOW({
-  animateClass: 'fade-in'
-});
+var ENLI_BOX_HEIGHT = 0
 
-var rellax = new Rellax('.rellax');
+var debouncedResizeBox = debounce(function () {
+  ENLI_BOX_HEIGHT = boxElems.reduce(function (h, el) {
+    el.classList.add('transition-height')
+    if (window.innerWidth < 865) { return h }
+    return resizeBox(el)
+  }, 0)
+}, 250)
+
+var addressContainerEl = document.querySelector('.contact-form__address-container')
+var offerContainerEl = document.querySelector('.contact-form__offer-container')
+var offerCheckboxEl = document.querySelector('input[name=offer]')
+var contactFormEl = document.querySelector('.contact-form')
+var addressCloseBtnEl = document.querySelector('.address-close-btn')
+var formSubmitConfirmationEl = document.querySelector('.contact-form-submit-message')
+var returnToFormLinkContainer = document.querySelector('.contact-form-return-link-container')
+var boxElems = Array.prototype.slice.call(document.getElementsByClassName('box'))
 
 document.addEventListener('DOMContentLoaded', function() {
   Tabs.init();
   Preview.init();
-  wow.init();
-});
+
+  var $tab = document.querySelector('[href="' + location.hash + '"]')
+  if ($tab && $tab.tabIndex > 1) {
+    Tabs.display($tab.tabIndex - 1)
+  }
+})
+
+document.getElementsByClassName('site-title')[0].addEventListener('click', function () {
+  location.hash = '#etusivu'
+  Tabs.display(0)
+})
+
+window.addEventListener('resize', debouncedResizeBox)
+
+offerContainerEl.addEventListener('click', function (e) {
+  if (e.target.type !== 'checkbox') return
+  if (e.target.checked) { return showAddressField() }
+  hideAddressField()
+})
+
+contactFormEl.addEventListener('submit', function (e) {
+  if (!offerCheckboxEl.checked) {
+    addressContainerEl.children.address.value = ''
+  }
+
+  setTimeout(function () {
+    contactFormEl.style.display = 'none'
+    formSubmitConfirmationEl.style.display = 'block'
+  }, 200)
+
+  history.pushState(null, '', '#ota-yhteytta')
+
+  e.preventDefault()
+})
+
+addressCloseBtnEl.addEventListener('click', function (e) {
+  hideAddressField()
+})
+
+returnToFormLinkContainer.addEventListener('click', function (e) {
+  formSubmitConfirmationEl.style.display = 'none'
+  contactFormEl.style.display = 'block'
+})
+
+boxElems.forEach(attachBoxElListener)
+
+function hideAddressField () {
+  offerContainerEl.style.display = 'block'
+  addressContainerEl.style.display = 'none'
+  offerCheckboxEl.checked = false
+}
+
+function showAddressField () {
+  offerContainerEl.style.display = 'none'
+  addressContainerEl.style.display = 'block'
+}
+
+function resizeBox (el) {
+  var height = (window.innerHeight - 80 - 4 * 16) / 3
+  el.style.height = height + 'px'
+  return height
+}
+
+// https://davidwalsh.name/javascript-debounce-function
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+function attachBoxElListener (boxEl, idx) {
+  boxEl.addEventListener('click', handleBoxElClick.bind(null, idx))
+}
+
+function handleBoxElClick (idx, e) {
+  e.preventDefault()
+
+  var cache = handleBoxElClick.__cache || (handleBoxElClick.__cache = {})
+  var boxEl = e.currentTarget
+
+  cache.BOX_HEIGHT = ENLI_BOX_HEIGHT || 200
+
+  var siblingIndexes = [ 0, 1, 2 ]
+  var siblingBoxElems = siblingIndexes.reduce(function (acc, siblingIdx) {
+    if (siblingIdx === idx) return acc
+    return acc.concat(boxElems[siblingIdx])
+  }, [])
+
+  if (boxEl.classList.contains('maximized')) {
+    resizeBox(boxEl)
+    boxEl.classList.remove('maximized')
+    setTimeout(restoreSiblings.bind(null, siblingBoxElems), 300)
+    return
+  }
+
+  boxEl.classList.toggle('maximized')
+  boxEl.classList.remove('minimized')
+
+  var minimizedHeight = 4 * 16
+  var maximizedHeight = parseInt(cache.BOX_HEIGHT, 10) * 2 - minimizedHeight * 2
+
+  siblingBoxElems.forEach(function (siblingEl) {
+    siblingEl.classList.add('minimized')
+    siblingEl.classList.remove('maximized')
+    siblingEl.style.height = minimizedHeight + 'px'
+  })
+
+  // setTimeout(function () { boxEl.style.height = maximizedHeight + 'px' }, 300)
+  boxEl.style.height = maximizedHeight + 'px'
+}
+
+function restoreSiblings (siblingBoxElems) {
+  siblingBoxElems.forEach(function (siblingEl) {
+    resizeBox(siblingEl)
+    siblingEl.classList.remove('minimized')
+  })
+}
+
+debouncedResizeBox()

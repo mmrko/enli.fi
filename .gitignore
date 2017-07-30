@@ -1,5 +1,7 @@
 _site
 
+raw_images
+
 .sass-cache/
 .jekyll-metadata
 ###OSX###

@@ -9,10 +9,10 @@ body {
   font-family: $font-body;
   font-feature-settings: 'liga' 0;
   font-size: 100%;
-  line-height: 1.6;
+  line-height: 1.4;
 
   @media (min-width: $mq-xs) {
-    font-size: 102.5%;
+    font-size: 0.85em;
   }
 
   @media (min-width: $mq-sm) {
@@ -75,15 +75,8 @@ p {
 }
 
 a {
-  color: $color-black;
   text-decoration: none;
-  transition: color 0.4s ease-in-out;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: $color-alpha;
-  }
+  color: $color-black;
 }
 
 figure {
@@ -122,6 +115,10 @@ ol, ul {
   padding: 0;
 }
 
+textarea {
+  white-space: pre-wrap;
+}
+
 /**
  * Text Selection
  */
@@ -132,6 +129,7 @@ ol, ul {
 }
 
 .previews__container.hero {
+  background-color: $color-grey-darker;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -140,14 +138,15 @@ ol, ul {
   // }
 
   @media (min-width: $mq-md) {
-    background-position: -3em;
+    background-position: -1.5em;
     background-image: url('../images/hero_portrait.jpg');
   }
 
 }
 
 .site__navigation-bar {
-  background: white;
+  background: $color-white;
+  border-bottom: 1px solid $color-grey-darker;
 }
 
 .site-contact {
@@ -164,8 +163,21 @@ ol, ul {
 }
 
 .site-title {
-  font-family: "Inconsolata",monospace;
+  font-family: helvetica neue;
   font-size: 2.5em;
-  text-shadow: 1px 1px 0px black;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
   cursor: default;
+  margin-left: -0.5em;
+}
+
+.hover {
+  transition: color 0.4s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $color-light-blue;
+  }
+  &:active {
+    color: $color-alpha;
+  }
 }

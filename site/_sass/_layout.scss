@@ -1,11 +1,4 @@
 /**
- * Body
- */
-body {
-  background-color: $color-grey;
-}
-
-/**
  * Sections
  */
 section {
@@ -59,7 +52,9 @@ section {
     &:first-child {
       position: relative;
 
-      height: 30em;
+      height: 16em;
+
+      @media (min-width: $mq-sm) and (orientation: portrait) { height: 22em; }
 
       background-color: $color-black;
 
@@ -78,7 +73,7 @@ section {
     }
 
     &:last-child {
-      min-height: 100vh;
+      // min-height: 100vh;
 
       @media (min-width: $mq-md) {
         margin-left: 45%;

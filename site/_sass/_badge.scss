@@ -1,0 +1,11 @@
+.badge {
+  position:absolute;
+  border-radius: 2em;
+  font-family: monospace;
+  font-size: 12px;
+  padding: 3px 8px;
+  background-color: white;
+  .hoivakodit & {
+    color: $color-yellow;
+  }
+}
