@@ -5,7 +5,7 @@
   font-size: 12px;
   padding: 3px 8px;
   background-color: white;
-  .hoivakodit & {
-    color: $color-yellow;
-  }
+  .hoivakodit & { color: $color-green; }
+  .asunnot & { color: $color-alpha; }
+  .kiinteistokehitys & { color: $color-grey-darker; }
 }

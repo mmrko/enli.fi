@@ -246,8 +246,10 @@ function handleBoxElClick (idx, e) {
     siblingEl.style.height = minimizedHeight + 'px'
   })
 
-  // setTimeout(function () { boxEl.style.height = maximizedHeight + 'px' }, 300)
-  boxEl.style.height = maximizedHeight + 'px'
+  var lastRow = boxEl.querySelector('.service-list--item:last-child')
+  var boxTitle = boxEl.querySelector('.box-title')
+
+  boxEl.style.height = lastRow.offsetHeight + lastRow.getBoundingClientRect().top - boxEl.getBoundingClientRect().top + boxTitle.offsetHeight + 20 + 'px'
 }
 
 function restoreSiblings (siblingBoxElems) {
