@@ -16,7 +16,7 @@
   <meta property="og:description" content="ENLI OY on erikoistunut hoiva- ja palvelukiinteistöjen kehittämiseen ja rakennuttamiseen. Meillä on vuosien kokemus erilaisten hoiva- ja päiväkotien sekä seniori- ja palveluasuntokokonaisuuksien kehittämisestä, rahoittamisesta ja rakennuttamisesta.
 ">
   <meta property="og:image" content="">
-  <meta property="og:type" content="blog">
+  <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:description" content="ENLI OY on erikoistunut hoiva- ja palvelukiinteistöjen kehittämiseen ja rakennuttamiseen. Meillä on vuosien kokemus erilaisten hoiva- ja päiväkotien sekä seniori- ja palveluasuntokokonaisuuksien kehittämisestä, rahoittamisesta ja rakennuttamisesta.
@@ -41,7 +41,8 @@
 
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
 
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css">
 </head>
 
 
@@ -81,23 +82,28 @@
         </p>
       </div>
 
-<!--       <div class="section-padding-all--sm center">
-        <h5 class="center">REFERENSSIT (TODO)</h5>
-        <div class="mt-1em testimonial">
-          <p>
-            <i class="testimonial__text">Bibendum vel varius non, bibendum sed nulla. Donec faucibus, mauris non aliquam placerat, tellus velit elementum eros, a accumsan sapien massa eget tortor. Curabitur odio augue, pulvinar sit amet hendrerit a, elementum eget ante. Integer nec nibh ultrices, euismod lectus lacinia, consequat lacus.</i>
-            <p class="testimonial__source">Matti Meikäläinen &mdash; Meikäläiset Oy</p>
-          </p>
-        </div>
-        <div class="mt-1em testimonial">
-          <p>
-            <i class="testimonial__text">Lorei vamus vel dignissim metus. Fusce tristique et velit in vulputate. Etiam tincidunt nibh justo, vel interdum justo rhoncus nec. Donec eu lacus erat. Fusce id tortor vitae dui molestie egestas. Sed imperdiet lectus lectus, vel laoreet lectus dignissim sit amet.</i>
-            <p class="testimonial__source">Antti Asiakas &mdash; Tmi. Asiakas</p>
-          </p>
+      <div class="section-padding-all--sm section-padding-all--no-top-bottom center section-references">
+        <h5 class="center">Referenssit</h5>
+        <div style="margin-top:0.5em">Tarkempi referenssilistaus pyydettäessä.</div>
+        <div class="testimonials clearfix">
+          <div class="mt-1em testimonial">
+            <div class="testimonial__box testimonial__box-joensuu"></div>
+            <span class="testimonial__text">Päiväkoti 750k-m&sup2;<br>2017</span>
+          </div>
+          <div class="mt-1em testimonial">
+            <div class="testimonial__box testimonial__box-kuopio"></div>
+            <span class="testimonial__text">Päiväkoti 850k-m&sup2;<br>2017</span>
+          </div>
+          <div class="mt-1em testimonial">
+            <div class="testimonial__box testimonial__box-lohja"></div>
+            <span class="testimonial__text">Hoivakoti 1600k-m&sup2;<br>2017</span>
+          </div>
         </div>
       </div>
 
-      <p class='center'>[ Asiakastieto logo ]</p> -->
+      <div class="bisnode">
+        <a href="https://www.soliditet.fi/lang/fi_FI/RatingGuideline" target="_blank" style="text-decoration: none;"><img style="border:0px;" oncontextmenu="return false" title="Me olemme luottokelpoinen yritys Bisnode rating järjestelmän mukaan. Bisnode rating on automaattinen ja jatkuvapäivitteinen luottoluokitusjärjestelmä." alt="Me olemme luottokelpoinen yritys Bisnode rating järjestelmän mukaan. Bisnode rating on automaattinen ja jatkuvapäivitteinen luottoluokitusjärjestelmä." id="img_273_73_px_tr1" src="https://merit.soliditet.fi/merit/imageGenerator/display?lang=FI&country=FI&cId=mpfQl%2FYSAeuHNCvn5eBcyA%3D%3D&cUid=RT4SpJLGh38%3D&imgType=img_273_73_px_tr1" /></a>
+      </div>
     </div>
 
     <div class="tab">
@@ -191,13 +197,13 @@
         </p>
       </li>
       <li class="service-list--item">
-        <i class="badge">1</i>
+        <i class="badge">2</i>
         <p class="service-list--item-text">
           Etsimme aktiivisesti kiinteistökehityskohteita
         </p>
       </li>
       <li class="service-list--item">
-        <i class="badge">1</i>
+        <i class="badge">3</i>
         <p class="service-list--item-text">
           Luomme kiinteistöihin yhteissijoittamisen mahdollisuuksia, mikäli olet kiinnostunut kiinteistösijoittamisen mahdollisuuksista, ota yhteyttä!
         </p>
@@ -211,12 +217,7 @@
 
     <div class="tab">
       <div class="section-padding-all--sm contact-form-container">
-
-  Referenssit pyydettäessä.
-
   <form class="pure-form contact-form" action="https://getsimpleform.com/messages?form_api_token=cacd2dc1a6ffbf7685e598f5f063b158" method="post">
-    <legend class="center"></legend>
-
     <fieldset class="pure-group">
       <input name='name' class="pure-input-1-2" placeholder="Nimi*" required>
       <input name='email' type="email" class="pure-input-1-2" placeholder="Sähköposti*" required>
@@ -257,9 +258,80 @@
 
 </section>
 
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Sulje (Esc)"></button>
+
+                <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+
+                <!-- <button class="pswp__button pswp__button--fs" title="Kokoruututila"></button> -->
+
+                <!-- <button class="pswp__button pswp__button--zoom" title="Zoom sisään/ulos"></button> -->
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+<!--             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div> -->
+
+            <button class="pswp__button pswp__button--arrow--left" title="Edellinen">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Seuraava">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
     </main>
 
-    <script type="text/javascript" src="/enli.fi/assets/js/app.js"></script>
+      
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" src="/enli.fi/assets/js/app.js"></script>
 
 
   </body>

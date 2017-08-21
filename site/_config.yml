@@ -33,7 +33,7 @@ sass:
   style: compressed
 
 # Gems
-gems: [ jekyll-feed,jekyll-paginate, jekyll-sitemap, octopress-autoprefixer ]
+plugins: [ jekyll-feed, jekyll-paginate, jekyll-sitemap, octopress-autoprefixer ]
 
 prose:
   rooturl: 'docs'

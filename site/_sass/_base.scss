@@ -16,15 +16,15 @@ body {
   }
 
   @media (min-width: $mq-sm) {
-    font-size: 105%;
+    font-size: 102.5%;
   }
 
   @media (min-width: $mq-md) {
-    font-size: 107.5%;
+    font-size: 105%;
   }
 
   @media (min-width: $mq-lg) {
-    font-size: 110%;
+    font-size: 107.5%;
   }
 
 }
@@ -180,4 +180,12 @@ textarea {
   &:active {
     color: $color-alpha;
   }
+}
+
+.pswp__caption__center {
+  text-align: center !important;
+}
+
+.pswp__button {
+  z-index: 9999;
 }

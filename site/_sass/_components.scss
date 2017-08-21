@@ -608,12 +608,6 @@
   }
 }
 
-.testimonial {
-  font-size: $font-small;
-  padding: 0.5em 1em;
-  &__source { font-weight: bold; }
-}
-
 .box {
   cursor: pointer;
   position: relative;
@@ -699,7 +693,7 @@
 
 .contact-page-map {
   width: 100%;
-  height: 12em;
+  height: 13em;
   position: absolute;
   bottom: 0;
   border: 0;
@@ -707,6 +701,7 @@
 
 .contact-form-container {
   min-height: 41.75em;
+  @media (min-width: $mq-md) { min-height: calc(100vh - 63px); }
 }
 
 .contact-form {
@@ -778,5 +773,64 @@
     color: indianred;
     cursor: pointer;
     float: right;
+  }
+}
+
+.testimonials {
+  padding-bottom: 2.25em;
+  @media (max-width: $mq-sm) {
+    padding-bottom: 3em;
+  }
+}
+
+.testimonial {
+  font-size: $font-small;
+  margin-right: 1em;
+  width: calc(33% - 0.6em);
+  height: 14em;
+  float: left;
+  border: 1px solid $color-grey-dark;
+}
+
+.testimonial:last-child {
+  margin-right: 0;
+}
+
+.testimonial__box {
+  background-size: cover;
+  height: 100%;
+  cursor: pointer;
+}
+
+.testimonial__box-joensuu {
+  background-image: url('../images/gallery/paivakoti_joensuu_1.jpg')
+}
+
+.testimonial__box-kuopio {
+  background-image: url('../images/gallery/paivakoti_kuopio.jpg')
+}
+
+.testimonial__box-lohja {
+  background-image: url('../images/gallery/hoivakoti_lohja.jpg')
+}
+
+.testimonial__text {
+  @media (max-width: $mq-sm) {
+    font-size: 0.925em;
+  }
+}
+
+.bisnode {
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  margin-top: 1em;
+
+  @media (min-width: $mq-lg) { margin-top: 2em; }
+
+  img {
+    width: auto;
+    display: inline;
+    margin-left: 3em;
   }
 }

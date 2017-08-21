@@ -27,6 +27,15 @@ section {
   &--sm {
     padding: 2em;
   }
+
+  &--no-top-bottom {
+    padding-top: 0em;
+    padding-bottom: 0em;
+  }
+}
+
+.section-references {
+  margin-top: -0.5em;
 }
 
 /**
