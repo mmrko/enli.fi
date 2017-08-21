@@ -157,7 +157,7 @@
   })
 
   contactFormEl.addEventListener('submit', function (e) {
-    if(window.FormData !== undefined) { return }
+    if (window.FormData === undefined) { return }
 
     e.preventDefault()
 

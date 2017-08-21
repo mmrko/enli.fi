@@ -189,3 +189,7 @@ textarea {
 .pswp__button {
   z-index: 9999;
 }
+
+.pswp__item {
+  overflow: visible !important;
+}
