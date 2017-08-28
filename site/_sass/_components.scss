@@ -712,11 +712,11 @@
   textarea[name='message'] {
     max-width: 100%;
     min-width: 100%;
-    margin-bottom: 1em;
-    min-height: 12em;
+    margin-bottom: 0.5em;
+    min-height: 9em;
     white-space: pre-wrap;
 
-    @media (max-width: $mq-md) { min-height: 10em; }
+    @media (max-width: $mq-md) { min-height: 6em; }
   }
 
   button[type='submit'] {
