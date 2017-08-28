@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>www.enli.fi/enli.fi/2017/03/18/welcome-to-jekyll/</loc>
+<loc>www.enli.fi/2017/03/18/welcome-to-jekyll/</loc>
 <lastmod>2017-03-18T09:22:20+02:00</lastmod>
 </url>
 <url>
-<loc>www.enli.fi/enli.fi/archive/</loc>
+<loc>www.enli.fi/archive/</loc>
 </url>
 <url>
-<loc>www.enli.fi/enli.fi/</loc>
+<loc>www.enli.fi/</loc>
 </url>
 <url>
-<loc>www.enli.fi/enli.fi/category/projekti1/</loc>
+<loc>www.enli.fi/category/projekti1/</loc>
 </url>
 <url>
-<loc>www.enli.fi/enli.fi/category/urakka2/</loc>
+<loc>www.enli.fi/category/urakka2/</loc>
 </url>
 </urlset>
