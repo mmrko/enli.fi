@@ -7,7 +7,8 @@
     "clean": "jekyll clean --destination docs",
     "build": "npm run clean && jekyll build --source site --destination docs",
     "start": "jekyll serve --source site --watch",
-    "deploy": "npm run build && git add -u . && git add docs && git commit -m 'Deploy' && git push"
+    "deploy": "npm run build && git add -u . && git add docs && git commit -m 'Deploy' && git push",
+    "postinstall": "cd site && bundle install"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/enlioy/enli.fi/issues"
   },
-  "homepage": "https://github.com/enlioy/enli.fi#readme"
+  "homepage": "https://github.com/enlioy/enli.fi#readme",
+  "devDependencies": {
+    "jekyll": "^3.0.0-beta1"
+  }
 }
