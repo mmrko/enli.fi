@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "jekyll clean --destination docs",
-    "build": "npm run clean && jekyll build --source site --destination docs",
+    "build": "npm run clean && jekyll build --source site --destination docs && echo 'www.enli.fi' > docs/CNAME",
     "start": "jekyll serve --source site --watch",
     "deploy": "npm run build && git add -u . && git add docs && git commit -m 'Deploy' && git push",
     "postinstall": "cd site && bundle install"
